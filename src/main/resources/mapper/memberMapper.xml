@@ -1,0 +1,33 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.finalProject.dao.MemberDao">
+
+	<select id="login">
+
+		select *
+		from  memberTable 
+		where userId = #{userId} and userPw = #{userPw}
+
+	</select>
+
+	<insert id="join">
+
+		insert into memberTable(userId , userPw)
+		values(#{userId} , #{userPw})
+	</insert>
+
+	<select id="find">
+
+		select count(*) 
+		from memberTable
+		 where userId = #{userId}
+
+	</select>
+	
+	<select id="info">
+
+		select * from memberTable
+
+	</select>
+</mapper>
