@@ -6,28 +6,28 @@
 	<select id="login">
 
 		select *
-		from  memberTable 
+		from  memberT 
 		where userId = #{userId} and userPw = #{userPw}
 
 	</select>
 
 	<insert id="join">
 
-		insert into memberTable(userId , userPw)
+		insert into memberT(userId , userPw)
 		values(#{userId} , #{userPw})
 	</insert>
 
 	<select id="find">
 
 		select count(*) 
-		from memberTable
+		from memberT
 		 where userId = #{userId}
 
 	</select>
 	
 	<select id="info">
 
-		select * from memberTable
+		select * from memberT
 
 	</select>
 </mapper>

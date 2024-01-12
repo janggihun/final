@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 
 <!-- css들어갈자리  -->
-<link rel="stylesheet" href="css/main.css" />
+<!-- <link rel="stylesheet" href="css/main.css" /> -->
 
 </head>
 
@@ -21,7 +21,8 @@
 <%@include file="inc/footer.jsp" %>
 
 <!-- js들어갈자리  -->
-<script src="js/main.js"/>
+<!-- <script src="js/main.js"/> -->
+<script src="js/jslol/loldata1.js"></script>
 
 </body>
 

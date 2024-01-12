@@ -1,8 +1,12 @@
 package com.project.finalProject.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.project.finalProject.service.MainService;
 
@@ -35,6 +39,26 @@ public class MainController {
 
 		return "redirect:/";
 	}
+	
+	@GetMapping("/main/info")
+	
+	public String mainInfo( String gameName, String tagLine, Model model) {
+		
+		
+		try {
+			List<String> mList = mainService.puuId(gameName, tagLine);
+			
+			List<Object> dataList = mainService.mainInfo(mList);
+			model.addAttribute("dataList",dataList);
+			model.addAttribute("gamName",gameName);
+		}catch (Exception e) {
+
+			model.addAttribute("msg", "조회 결과가 0건 입니다.");
+		}	
+			
+		return "mainDetail2";
+	}
+
 	
 
 }
