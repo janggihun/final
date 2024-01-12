@@ -10,7 +10,7 @@
 <!-- css들어갈자리  -->
 <link rel="stylesheet" href="css/main.css" />
 
-</head>
+</head> 
 
 <body>
 
