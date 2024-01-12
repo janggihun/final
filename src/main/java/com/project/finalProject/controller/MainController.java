@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.project.finalProject.service.MainService;
 
@@ -40,9 +41,8 @@ public class MainController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/main/info")
-	
-	public String mainInfo( String gameName, String tagLine, Model model) {
+	@PostMapping("/main/info")
+	public String mainInfo(String gameName, String tagLine, Model model) {
 		
 		
 		try {
