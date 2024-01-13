@@ -3,6 +3,15 @@
 
 <mapper namespace="com.project.finalProject.dao.MemberDao">
 
+
+	<select id="main">
+	
+	select * from memberT where userId = #{userId}
+	
+	</select>
+
+
+
 	<select id="login">
 
 		select *
@@ -30,4 +39,21 @@
 		select * from memberT
 
 	</select>
+	
+	<insert id="payDbSave">
+
+		insert into paymentT(userId, userCash,userPoint)
+		values(#{userId}, #{userCash},#{userPoint})
+
+	</insert>
+	<update id="updatePoint">
+
+		update memberT
+		set userPoint = 
+		(select userPoint from memberT where userId = #{userId})+#{userPoint}
+		where userId = #{userId}
+
+	</update>
+	
+	
 </mapper>

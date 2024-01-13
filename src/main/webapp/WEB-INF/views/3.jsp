@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>3번페이지</title>
 <!-- css들어갈자리  -->
-<link rel="stylesheet" href="css/main.css" />
+
 
 </head>
 

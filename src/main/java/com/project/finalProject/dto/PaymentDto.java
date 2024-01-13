@@ -1,5 +1,7 @@
 package com.project.finalProject.dto;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,10 +9,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MemberDto {
+public class PaymentDto {
 
+	private int pCnt;
 	private String userId;
-	private String userPw;
+	private int userCash;
 	private int userPoint;
-	
+	private Date pDate ;
+	private String pg;
 }

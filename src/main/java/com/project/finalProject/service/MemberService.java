@@ -10,6 +10,7 @@ import com.project.finalProject.controller.DbErrorController;
 import com.project.finalProject.cuntomEx.CunstomException;
 import com.project.finalProject.dao.MemberDao;
 import com.project.finalProject.dto.MemberDto;
+import com.project.finalProject.dto.PaymentDto;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -50,6 +51,26 @@ public class MemberService {
 		}
 
 		return memberDto;
+	}
+	@Transactional
+	public void payDbSave(PaymentDto paymentDto) {
+		
+		int result1 =memberDao.payDbSave(paymentDto);
+		
+		int result2 = memberDao.updatePoint(paymentDto);
+		
+		if(result1 ==0) {
+			throw new CunstomException("paymentT 결제 db에러");
+		}else if(result2 == 0) {		
+			throw new CunstomException("memberT 포인트 db에러");
+		}
+		
+	}
+
+	public MemberDto main(MemberDto memberDto) {
+		
+		return memberDao.main(memberDto);
+		
 	}
 
 }

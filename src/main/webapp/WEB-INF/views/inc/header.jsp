@@ -18,7 +18,7 @@
 
    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 
-<input id="userId" type="hidden" value="${userid}">
+<input id="userId" type="hidden" value="${userId}">
 
 
 
@@ -34,7 +34,7 @@
 
 		<c:choose>
 			<c:when test="${userId != null}">
-				<span class="navbar-brand">${userId}님 환영합니다.</span>
+				<span class="navbar-brand">${userId}님 접속중</span>
 				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
 					data-bs-target="#exampleModal3">결제하기</button>
 				<button  ><a class="btn btn-secondary" href="/logout">로그아웃</a></button>
@@ -152,21 +152,14 @@
 
 				<div>
 					<h3 class="amount">결제 금액 :<span id = "tMoney"></span> 원<input type = "hidden" id = "totalMoney" value ="0" ></h3>
-					<p>개월 수를 선택 해 주세요</p>
+					<p>원하는 금액을 선택 해 주세요</p>
 					<select onchange="monthSelect(this)">
 						<option value="0">선택하기</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
-						<option value="11">11</option>
-						<option value="12">12</option>
+						<option value="1100">1,100원 : 1,100 포인트 충전</option>
+						<option value="5500">5,500원 : 5,500 포인트 충전</option>
+						<option value="11000">11,000원 : 11,000 포인트 충전</option>
+						<option value="55000">55,000원 : 55,000 포인트 충전</option>
+					
 					</select>
 				</div>
 

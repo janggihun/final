@@ -1,22 +1,21 @@
 
+
+
+
 function monthSelect(e) {
-	let needMoney = (100 * e.value);
-	$('#tMoney').html(needMoney)
+	let needMoney = (e.value);
+	const Money = e.value.toString()
+  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+	$('#tMoney').html(Money)
 
 	document.querySelector('#totalMoney').value = (100 * e.value)
 
 }
 
 function kakaopay() {
-
-	let totalMoney = $('#totalMoney').val()
 	let userId = $('#userId').val()
-
-	if (totalMoney == null || totalMoney == 'none' || totalMoney == "") {
-		alert("결제 금액을 선택해주세요");
-		return;
-
-	}
+//	console.log(userId)
+	let totalMoney = $('#totalMoney').val()
 	let IMP = window.IMP;
 	IMP.init('imp11857210');
 	IMP.request_pay({
@@ -31,7 +30,8 @@ function kakaopay() {
 		buyer_addr: '인천시 주안동',
 		buyer_postcode: '123-456'
 	}, function(rsp) {
-		console.log(rsp)
+				console.log(rsp)
+		//rsp는 ps와 연결이 되었을때 주는 정보임. 그안에는 많은게 있는데 그중에서 id와 amount를 가지고옴,
 		if (rsp.imp_uid) {
 
 			$.ajax({
@@ -39,19 +39,35 @@ function kakaopay() {
 				url: '/pay/' + rsp.imp_uid,
 			}).done(function(data) {
 				if (rsp.paid_amount == data.response.amount) {
-					alert("결제 성공");
+					dbsave(userId,totalMoney);
 				} else {
 					alert("결제 실패");
 				}
 			})
 
-
-
 		} else {
-			alert("결제 오류입니다. 관리자에게 문의하세요");
+			alert("결제 금액을 선택해주세요");
 		}
 
-
-
 	})
+}
+
+function dbsave(userId,userCash) {
+	let userPoint = (userCash * 10)
+	
+	data = {"userId" : userId,
+			"userCash" : userCash,
+			"userPoint" : userPoint,
+		
+			}
+
+	$.ajax({
+		type: 'post',
+		url: '/payDbSave',
+		data : data,
+	}).done(function(res) {
+			alert("결제 성공");
+			location.href = "/main"
+	})	
+
 }

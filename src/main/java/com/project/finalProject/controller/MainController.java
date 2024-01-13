@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.project.finalProject.dto.MemberDto;
 import com.project.finalProject.dto.PostDto;
 import com.project.finalProject.service.MainService;
+import com.project.finalProject.service.MemberService;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 public class MainController {
 
 	@Autowired
-	MainService mainService;
+	MemberService memberService;
 
 	@GetMapping("/")
 	public String index() {
@@ -30,24 +32,32 @@ public class MainController {
 	}
 
 	@GetMapping("/main")
-	public String main() {
-		
+	public String main(HttpSession session, MemberDto memberDto, Model model) {
+		if (session.getAttribute("userId") != null) {
+			String userId = (String) session.getAttribute("userId");
+			memberDto.setUserId(userId) ;
+			MemberDto mDto = memberService.main(memberDto);
+			model.addAttribute("mDto", mDto);
+
+		}
+
 		return "main";
 	}
+
 	@GetMapping("/pay")
 	public String pay() {
-		
+
 		return "payment";
 	}
-	
-	
+
 	@GetMapping("/logout")
-	public String logout(HttpSession session,RedirectAttributes redirectAttributes) {
+	public String logout(HttpSession session, RedirectAttributes redirectAttributes) {
 		session.invalidate();
-		redirectAttributes.addFlashAttribute("msg","로그아웃되었습니다.");
+		redirectAttributes.addFlashAttribute("msg", "로그아웃되었습니다.");
 		return "redirect:/";
 	}
-	//동기처리시
+
+	// 동기처리시
 //	@PostMapping("/main/info") //소환사 이름검색 << 추후 이걸로 로그인 대신받기도 가능 
 //	public String mainInfo(PostDto postDto, Model model) {
 //		log.info("gameName :{}",postDto);
@@ -70,26 +80,32 @@ public class MainController {
 
 		return "1";
 	}
+
 	@GetMapping("/2")
 	public String go2() {
 
 		return "2";
 	}
+
 	@GetMapping("/3")
 	public String go3() {
 
 		return "3";
 	}
+
 	@GetMapping("/4")
 	public String go4() {
 
 		return "4";
 	}
+
 	@GetMapping("/5")
 	public String go5() {
 
 		return "5";
-	}@GetMapping("/6")
+	}
+
+	@GetMapping("/6")
 	public String go6() {
 
 		return "6";
