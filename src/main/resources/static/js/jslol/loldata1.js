@@ -4,6 +4,7 @@
 
 
 $('#idSearch').on("click", function() {
+	$('#doneflag').empty();
 	LoadingWithMask()
 	$('#loadingimg').show();
 	let gameName = $('#gameName').val()
@@ -27,15 +28,24 @@ $('#idSearch').on("click", function() {
 			traditional: true,
 
 
-		}).done(function(result) {
-console.log("성공")
-			console.log(result)
+			success: function(result) {
+				closeLoadingWithMask()
+				console.log(result)
+				$('#doneflag').html("<h2 align = center> 성공 , f12를 눌러 정보확인요망</h2>")
 
-		}).fail(function() {
-			console.log(error)
+				if (result == null || result == '') {
+
+					$('#doneflag').html("<h2 align = center>실패, 소환사 이름을 찾을수 없음</h2>")
+
+				}
+
+
+			}, error: function(error) {
+				closeLoadingWithMask()
+				console.log("ajax 통신 중 에러발생");
+			}
+
 		})
-
-
 	}
 })
 

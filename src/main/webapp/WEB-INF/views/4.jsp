@@ -6,9 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>첫화면</title>
+<title>4번페이지</title>
 <!-- css들어갈자리  -->
-<!-- <link rel="stylesheet" href="css/main.css" /> -->
+<link rel="stylesheet" href="css/main.css" />
 
 </head>
 
@@ -16,26 +16,13 @@
 
 <%@include file="inc/header.jsp" %>
 <div style="height: 700px; background: lightpink;">
-<%@include file="main/mainDetail.jsp" %>
+<h1>4번 페이지 입니다.</h1>
 </div>
 <%@include file="inc/footer.jsp" %>
 
 <!-- js들어갈자리  -->
-<!-- <script src="js/main.js"/> -->
-<script src="js/jslol/loldata1.js"></script>
-<script type="text/javascript">
+<script src="js/main.js"/>
 
-
-$(document).ready(function() {
-	//메세지 형태의 값은 다 찾기
-	if ('${msg}' != '') {
-		alert('${msg}');
-	}
-	else if ('${error}' != '') {
-		alert('${error}');
-	}
-})
-</script>
 </body>
 
 </html>

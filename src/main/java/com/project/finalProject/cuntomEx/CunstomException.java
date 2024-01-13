@@ -1,14 +1,14 @@
-package com.project.finalProject.runtimeEx;
+package com.project.finalProject.cuntomEx;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class DbException extends RuntimeException {
-	
-	public DbException() {
+public class CunstomException extends RuntimeException {
 
-		super("DB트렌젝션");
-		log.info("db트렌젝션");
+	public CunstomException(String msg) {
+		
+		super(msg);
+		
 	}
 
 }

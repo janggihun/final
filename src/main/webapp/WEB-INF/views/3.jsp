@@ -6,23 +6,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>3번페이지</title>
 <!-- css들어갈자리  -->
 <link rel="stylesheet" href="css/main.css" />
 
-</head> 
+</head>
 
 <body>
- 
+
 <%@include file="inc/header.jsp" %>
-
-<%@include file="login/loginFrm.jsp" %>
-
+<div style="height: 700px; background: lightpink;">
+<h1>3번 페이지 입니다.</h1>
+</div>
 <%@include file="inc/footer.jsp" %>
 
 <!-- js들어갈자리  -->
 <script src="js/main.js"/>
- 
+
 </body>
 
 </html>

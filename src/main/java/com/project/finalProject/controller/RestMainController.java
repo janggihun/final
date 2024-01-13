@@ -19,23 +19,23 @@ import lombok.extern.slf4j.Slf4j;
 public class RestMainController {
 	@Autowired
 	MainService mainService;
-	
-	//비동기처리시
-	@PostMapping("/main/info") //소환사 이름검색 << 추후 이걸로 로그인 대신받기도 가능
-	public HashMap<String, Object> mainInfo(PostDto postDto, Model model) {
-		log.info("gameName :{}",postDto);
-		
+
+	// 비동기처리시
+	@PostMapping("/main/info") // 소환사 이름검색 << 추후 이걸로 로그인 대신받기도 가능
+	public ArrayList<HashMap<String, Object>> mainInfo(PostDto postDto, Model model) {
+		log.info("gameName :{}", postDto);
+		HashMap<String, Object> mMap = new HashMap<>();
 		try {
 			List<String> mList = mainService.puuId(postDto.getGameName(), postDto.getTagLine());
-			
-			
+			log.info("mList :{}",mList);
+			if(mList == null) {
+				throw new Exception();
+			}
 			return mainService.mainInfo(mList);
-		}catch (Exception e) {
-			HashMap<String, Object> mMap = new HashMap<>();
-			mMap.put("msg","조회 결과가 0건 입니다.");
-			return mMap;
-		}	
-			
-		
+		} catch (Exception e) {
+
+			return null;
+		}
+
 	}
 }
