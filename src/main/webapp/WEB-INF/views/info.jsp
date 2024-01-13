@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!-- css들어갈자리  -->
-<link rel="stylesheet" href="css/main.css" />
+<!-- <link rel="stylesheet" href="css/main.css" /> -->
 
 </head>
 
@@ -16,12 +16,13 @@
 
 <%@include file="inc/header.jsp" %>
 
-<%@include file="login/joinFrm.jsp" %>
+<%@include file="main/mainDetail2.jsp" %>
 
 <%@include file="inc/footer.jsp" %>
 
 <!-- js들어갈자리  -->
-<script src="js/main.js"/>
+<!-- <script src="js/main.js"/> -->
+<script src="js/jslol/loldata1.js"></script>
 
 </body>
 

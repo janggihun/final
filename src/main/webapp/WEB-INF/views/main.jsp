@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<title>Insert title here</title>
 <!-- css들어갈자리  -->
 <!-- <link rel="stylesheet" href="css/main.css" /> -->
 

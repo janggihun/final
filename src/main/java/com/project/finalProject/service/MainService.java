@@ -19,8 +19,6 @@ public class MainService {
 	WebClientService webClientServiceImpl;
 
 	public List<String> puuId(String gameName, String tagLine) {
-
-		log.info("gameName : {}", gameName);
 		
 		List<PostDto> iList = new LinkedList<>();
 

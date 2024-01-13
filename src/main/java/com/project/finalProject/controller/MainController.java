@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.project.finalProject.dto.PostDto;
 import com.project.finalProject.service.MainService;
 
 import jakarta.servlet.http.HttpSession;
@@ -41,22 +42,22 @@ public class MainController {
 		return "redirect:/";
 	}
 	
-	@PostMapping("/main/info")
-	public String mainInfo(String gameName, String tagLine, Model model) {
-		
+	@PostMapping("/main/info") //소환사 이름검색 << 추후 이걸로 로그인 대신받기도 가능
+	public String mainInfo(PostDto postDto, Model model) {
+		log.info("gameName :{}",postDto);
 		
 		try {
-			List<String> mList = mainService.puuId(gameName, tagLine);
+			List<String> mList = mainService.puuId(postDto.getGameName(), postDto.getTagLine());
 			
 			List<Object> dataList = mainService.mainInfo(mList);
 			model.addAttribute("dataList",dataList);
-			model.addAttribute("gamName",gameName);
+			model.addAttribute("gamName",postDto.getGameName());
 		}catch (Exception e) {
 
 			model.addAttribute("msg", "조회 결과가 0건 입니다.");
 		}	
 			
-		return "mainDetail2";
+		return "info";
 	}
 
 	
