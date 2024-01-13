@@ -34,6 +34,11 @@ public class MainController {
 		
 		return "main";
 	}
+	@GetMapping("/pay")
+	public String pay() {
+		
+		return "payment";
+	}
 	
 	
 	@GetMapping("/logout")
