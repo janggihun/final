@@ -34,7 +34,7 @@ public class MemberService {
 	}
 
 	@Transactional
-	public MemberDto join(MemberDto memberDto) throws CunstomException {
+	public MemberDto join(MemberDto memberDto){
 		
 	
 		if (memberDao.find(memberDto) == 1) {
