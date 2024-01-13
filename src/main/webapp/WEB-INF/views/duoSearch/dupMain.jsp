@@ -35,7 +35,7 @@
 					<td>자야</td>
 					<td>내용</td>
 					<td>2024-01-14</td>
-					<td>	   
+<td>	   
  <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     ...
