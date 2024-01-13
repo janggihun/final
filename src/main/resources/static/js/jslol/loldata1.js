@@ -8,30 +8,50 @@ $('#idSearch').on("click", function() {
 	$('#loadingimg').show();
 	let gameName = $('#gameName').val()
 	let tagLine = $('#tagLine').val()
-	if (gameName != '') {
 
+	if (gameName == '' || tagLine == '') {
 
-		location.href = "/main/info/" + gameName + "/" + tagLine
-
-	} else {
 		alert("소환사 이름을 선택해주세요")
 		closeLoadingWithMask()
+		return false;
+	} else {
+		data = {
+			'gameName': gameName,
+			'tagLine': tagLine
+		}
+
+		$.ajax({
+			type: 'post',
+			url: '/main/info',
+			data: data,
+			traditional: true,
+
+
+		}).done(function(result) {
+console.log("성공")
+			console.log(result)
+
+		}).fail(function() {
+			console.log(error)
+		})
+
+
 	}
 })
 
 
-function check(id) {
-
-	if ($('.' + id).css("display") == 'none') {
-
-		$('.' + id).fadeTo(50, 1);
-	}
-	// btn` 보이기 (display: block)
-	else {
-		$('.' + id).hide();
-	}
-
-}
+//function check(id) {
+//
+//	if ($('.' + id).css("display") == 'none') {
+//
+//		$('.' + id).fadeTo(50, 1);
+//	}
+//	// btn` 보이기 (display: block)
+//	else {
+//		$('.' + id).hide();
+//	}
+//
+//}
 
 function LoadingWithMask() {
 	var maskHeight = $(document).height(); var maskWidth = window.document.body.clientWidth;

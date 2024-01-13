@@ -22,8 +22,9 @@
 
 <!-- js들어갈자리  -->
 <!-- <script src="js/main.js"/> -->
-<script src="js/jslol/loldata1.js"></script>
+<script src="/js/jslol/loldata2.js"></script>
 
+  
 </body>
 
 </html>

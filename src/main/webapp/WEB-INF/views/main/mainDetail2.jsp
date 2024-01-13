@@ -4,15 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+
 </head>
 <body>
 
+<h2> 결과입니다. f12를 누르고 확인</h2>
 
 
-
- ${dataList}
 
 </body>
 </html>

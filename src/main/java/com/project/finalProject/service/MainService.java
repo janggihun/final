@@ -1,6 +1,7 @@
 package com.project.finalProject.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -29,20 +30,17 @@ public class MainService {
 
 	}
 
-	public List<Object> mainInfo(List<String> mList) {
+	public HashMap<String, Object> mainInfo(List<String> mList) {
 
 		// 역직렬화 : 롤 리스트는 Stri 으로 받으며 json으로 들어오는데 그걸 다시 list로 변환해주는 것
 
-		List<Object> dataList = new ArrayList<>();
+		
+		HashMap<String, Object> mMap = new HashMap<>();
 		for (int i = 0; i < mList.size(); i++) {
-			PostDto postDto = new PostDto();
-			postDto.setMatchId(mList.get(i));
-			postDto.setMatches(webClientServiceImpl.getgameinfo(mList.get(i)));
-			postDto.setTimeline(webClientServiceImpl.getgameTimeline(mList.get(i)));
-
-			dataList.add(postDto);
-//				log.info("========{}",postDto.getMatches());
+			
+			mMap.put("matches",webClientServiceImpl.getgameinfo(mList.get(i)));
+			mMap.put("timeline",webClientServiceImpl.getgameTimeline(mList.get(i)));
 		}
-		return dataList;
+		return mMap;
 	}
 }

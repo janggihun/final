@@ -56,7 +56,7 @@ public class WebClientService {
 		return response;
 	}
 
-	public JSONObject getgameinfo(String matchId) { // 매치id를 통해서 데이터를 받음
+	public Map getgameinfo(String matchId) { // 매치id를 통해서 데이터를 받음
 
 		String url = "https://asia.api.riotgames.com/lol/match/v5/matches/" + matchId + "?api_key=" + api_key;
 		// webClient 기본 설정
@@ -65,14 +65,16 @@ public class WebClientService {
 
 		Map response = webClient.get() // 맵으로 받으면 됨
 				.uri(uriBuilder -> uriBuilder.build()).retrieve().bodyToMono(Map.class).block();
-
-		JSONObject parser = new JSONObject(checkTime(response)); // 받은 데이터를 json화 시킴
-
-		return parser;
+//
+//		JSONObject parser = new JSONObject(checkTime(response)); // 받은 데이터를 json화 시킴
+//
+//		return parser;
+		
+		return response;
 
 	}
 
-	public JSONObject getgameTimeline(String matchId) {
+	public Map getgameTimeline(String matchId) {
 
 		String url = "https://asia.api.riotgames.com/lol/match/v5/matches/" + matchId + "/timeline?api_key=" + api_key;
 
@@ -86,9 +88,11 @@ public class WebClientService {
 						.build())
 				.retrieve().bodyToMono(Map.class).block();
 
-		JSONObject parser = new JSONObject(response); // 받은 데이터를 json화 시킴
+//		JSONObject parser = new JSONObject(response); // 받은 데이터를 json화 시킴
+//
+//		return parser;
+		return response;
 
-		return parser;
 	}
 
 // 타임 스탬프를 통해서 몇일전 게임인지 찾는 구문
