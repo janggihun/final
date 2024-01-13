@@ -18,13 +18,13 @@
 
 <div style="height: 700px; background: lightpink;">
 
-<h1>1번 페이지 입니다.</h1>
+<%@include file="duoSearch/dupMain.jsp" %>
 
 </div>
 <%@include file="inc/footer.jsp" %>
 
 <!-- js들어갈자리  -->
-<script src="js/main.js"/>
+<script src="js/jscommon/common.js"/>
 
 </body>
 
