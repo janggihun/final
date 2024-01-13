@@ -14,9 +14,9 @@ public class DbErrorController{
 	
 	@ExceptionHandler(CunstomException.class)
 	public String error(RedirectAttributes redirectAttributes, Exception ex) {
-		String error = ex.getMessage();
-		redirectAttributes.addFlashAttribute("error",error);
-		log.info("====err : {}",error);
+		
+		redirectAttributes.addFlashAttribute("error",ex.getMessage());
+//		log.info("====err : {}",ex.getMessage());
 		return "redirect:/";
 	}
 }
