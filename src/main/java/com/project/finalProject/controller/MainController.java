@@ -75,37 +75,37 @@ public class MainController {
 //			
 //		return "info";
 //	}
-	@GetMapping("/1")
+	@GetMapping("/jgh")
 	public String go1() {
 
 		return "jgh/jgh";
 	}
 
-	@GetMapping("/2")
+	@GetMapping("/kdg")
 	public String go2() {
 
 		return "kdg/kdg";
 	}
 
-	@GetMapping("/3")
+	@GetMapping("/kyt")
 	public String go3() {
 
 		return "kyt/kyt";
 	}
 
-	@GetMapping("/4")
+	@GetMapping("/kjm")
 	public String go4() {
 
 		return "kjm/kjm";
 	}
 
-	@GetMapping("/5")
+	@GetMapping("/stm")
 	public String go5() {
 
 		return "stm/stm";
 	}
 
-	@GetMapping("/6")
+	@GetMapping("/jhl")
 	public String go6() {
 
 		return "jhl/jhl";
