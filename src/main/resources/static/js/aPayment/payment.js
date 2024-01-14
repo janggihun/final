@@ -8,7 +8,7 @@ function monthSelect(e) {
   .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 	$('#tMoney').html(Money)
 
-	document.querySelector('#totalMoney').value = (100 * e.value)
+	document.querySelector('#totalMoney').value = (e.value)
 
 }
 
