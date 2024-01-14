@@ -6,9 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>1번페이지</title>
+<title>김동근</title>
 <!-- css들어갈자리  -->
->
 
 </head>
 
@@ -16,7 +15,7 @@
 
 <%@include file="inc/header.jsp" %>
 <div style="height: 700px; background: lightpink;">
-<h1>2번 페이지 입니다.</h1>
+<h1>김동근 페이지 입니다.</h1>
 
 </div>
 <%@include file="inc/footer.jsp" %>

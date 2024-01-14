@@ -18,14 +18,14 @@
 
 <div style="height: 700px; background: lightpink;">
 
-<%@include file="duoSearch/dupMain.jsp" %>
+<%@include file="duoSearch/duoMain.jsp" %>
 
 </div>
 <%@include file="inc/footer.jsp" %>
 
 <!-- js들어갈자리  -->
 <script src="js/jscommon/common.js"/>
-
+<script src="js/jsduo/duo.js"/>
 </body>
 
 </html>

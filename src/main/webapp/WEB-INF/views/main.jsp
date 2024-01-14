@@ -16,7 +16,7 @@
 
 <%@include file="inc/header.jsp" %>
 <div style="height: 700px; background: lightpink;">
-<%@include file="main/mainDetail.jsp" %>
+<%@include file="aMain/mainDetail.jsp" %>
 </div>
 <%@include file="inc/footer.jsp" %>
 

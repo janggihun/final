@@ -78,36 +78,36 @@ public class MainController {
 	@GetMapping("/1")
 	public String go1() {
 
-		return "1";
+		return "jgh/jgh";
 	}
 
 	@GetMapping("/2")
 	public String go2() {
 
-		return "2";
+		return "kdg/kdg";
 	}
 
 	@GetMapping("/3")
 	public String go3() {
 
-		return "3";
+		return "kyt/kyt";
 	}
 
 	@GetMapping("/4")
 	public String go4() {
 
-		return "4";
+		return "kjm/kjm";
 	}
 
 	@GetMapping("/5")
 	public String go5() {
 
-		return "5";
+		return "stm/stm";
 	}
 
 	@GetMapping("/6")
 	public String go6() {
 
-		return "6";
+		return "jhl/jhl";
 	}
 }

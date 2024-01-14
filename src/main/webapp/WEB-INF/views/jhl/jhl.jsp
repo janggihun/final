@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>6번페이지</title>
+<title>정혜린</title>
 <!-- css들어갈자리  -->
 
 
@@ -16,7 +16,7 @@
 
 <%@include file="inc/header.jsp" %>
 <div style="height: 700px; background: lightpink;">
-<h1>6번 페이지 입니다.</h1>
+<h1>정혜린 페이지 입니다.</h1>
 </div>
 <%@include file="inc/footer.jsp" %>
 

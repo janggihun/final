@@ -7,11 +7,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ERROR</title>
 
 
 </head>
 <body>
+
+<h1>이곳은 인덱스 입니다.</h1>
 
 </body>
 </html>
