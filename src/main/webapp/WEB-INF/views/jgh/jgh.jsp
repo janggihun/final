@@ -24,8 +24,9 @@
 <%@include file="inc/footer.jsp" %>
 
 <!-- js들어갈자리  -->
-<script src="js/aCommon/common.js"/>
-<script src="js/jgh/jsduo/duo.js"/>
+<script defer src="/js/jgh/jsduo/duo.js"></script>
+<script defer src="/js/aCommon/common.js"></script>
+
 </body>
 
 </html>
