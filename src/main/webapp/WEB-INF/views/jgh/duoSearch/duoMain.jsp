@@ -155,7 +155,7 @@
 
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">듀오찾기</button>
+					<button type="button" class="btn btn-primary" id = "duoSearchBtn">듀오찾기</button>
 					<button type="button" class="btn btn-secondary"
 						data-bs-dismiss="modal">닫기</button>
 

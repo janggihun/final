@@ -23,7 +23,7 @@
 <!-- js들어갈자리  -->
 <!-- <script src="js/main.js"/> -->
 
-<script src="js/jslol/loldata1.js"></script>
+<script src="js/aLol/loldata1.js"></script>
 <script type="text/javascript">
 
 

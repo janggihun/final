@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>1번페이지</title>
+<title>롤 영혼의 Duo 찾기</title>
 <!-- css들어갈자리  -->
 
 
@@ -24,8 +24,8 @@
 <%@include file="inc/footer.jsp" %>
 
 <!-- js들어갈자리  -->
-<script src="js/jscommon/common.js"/>
-<script src="js/jsduo/duo.js"/>
+<script src="js/aCommon/common.js"/>
+<script src="js/jgh/jsduo/duo.js"/>
 </body>
 
 </html>
