@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>롤 영혼의 Duo 찾기</title>
 <!-- css들어갈자리  -->
-
+<link href="/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 
