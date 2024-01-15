@@ -7,16 +7,17 @@
 </head>
 <body>
 
-	<h1 align="center">롤 듀오DUO 구하기</h1>
 	
-	<div id=duoTable style="width: 1700px;">
+	
+	<div id=duoTable class = searchDuoT>
+	<h1 align="center">롤 듀오DUO 구하기</h1>
 		<div align="right">
 			<button type="button" class="btn btn-success" type="button"
 				class="btn btn-primary" data-bs-toggle="modal"
 				data-bs-target="#exampleModal">글쓰기</button>
 			<p></p>
 		</div>
-		<table class="table table-hover">
+		<table  class="table table-hover">
 			<thead>
 				<tr class="table-secondary">
 					<th scope="col">연승/연패</th>
