@@ -11,14 +11,13 @@ function duoSearch() {
 $('#duoSearchBtn').on("click", function() {
 
 	let userId = $('#userId').val()
-	let MyPosition = $('#position').val()
-	let DuoPosition = $('input[name=inlineRadioOptions]:checked').val()
+	let myPosition = $('#position').val()
+	let duoPosition = $('input[name=inlineRadioOptions]:checked').val()
 	let tier = $('#tier').val()
 	let gameType = $('#gameType').val()
-	let textArea = $('#textArea').val()
+	let memo = $('#textArea').val()
 
-	if (MyPosition == '' || DuoPosition == '' || DuoPosition == ''
-		|| tier == '' || gameType == '' || textArea == '') {
+	if (myPosition == '' || duoPosition == '' || tier == '' || gameType == '' || textArea == '') {
 
 		alert("빠진부분이 있습니다 확인해주세요")
 
@@ -26,17 +25,17 @@ $('#duoSearchBtn').on("click", function() {
 	}
 	data = {
 		'userId': userId,
-		'MyPosition': MyPosition,
-		'DuoPosition': DuoPosition,
+		'myPosition': myPosition,
+		'duoPosition': duoPosition,
 		'tier': tier,
 		'gameType': gameType,
-		'textArea': textArea
+		'memo': memo
 	}
 
 	$.ajax({
 
 		type: 'post',
-		url: '/test',
+		url: '/saveDb',
 		data: data,
 		success: function(res) {	
 			alert("등록중입니다.")

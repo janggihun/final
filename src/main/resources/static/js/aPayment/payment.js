@@ -2,25 +2,27 @@
 
 
 
-function monthSelect(e) {
+function Select(e) {
 	let needMoney = (e.value);
 	const Money = e.value.toString()
   .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 	$('#tMoney').html(Money)
 
-	document.querySelector('#totalMoney').value =  e.value
-
+	document.querySelector('#totalMoney').value = e.value
+console.log(totalMoney)
 }
 
-function kakaopay() {
+function pay() {
 	let userId = $('#userId').val()
 //	console.log(userId)
 	let totalMoney = $('#totalMoney').val()
+	console.log(totalMoney)
 	let IMP = window.IMP;
 	IMP.init('imp11857210');
 	IMP.request_pay({
-		pg: 'kakaopay',
+		pg: 'naverpay',
 		//		pay_method: 'card', //생략 가능
+		 customer_uid : userId,
 		merchant_uid: 'merchant_' + new Date().getTime(), // 상점에서 관리하는 주문 번호
 		name: '결제테스트: 테스트',
 		amount: totalMoney,

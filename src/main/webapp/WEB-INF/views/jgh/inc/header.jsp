@@ -152,7 +152,7 @@
 				<div>
 					<h3 class="amount">결제 금액 :<span id = "tMoney"></span> 원<input type = "hidden" id = "totalMoney" value ="0" ></h3>
 					<p>원하는 금액을 선택 해 주세요</p>
-					<select onchange="monthSelect(this)">
+					<select onchange="Select(this)">
 						<option value="0">선택하기</option>
 						<option value="1100">1,100원 : 1,100 포인트 충전</option>
 						<option value="5500">5,500원 : 5,500 포인트 충전</option>
@@ -165,7 +165,7 @@
 			</div>
 			<div align = "center">
 			
-			<input type="button" class="btn btn-primary btn-sm" onclick="kakaopay()" value = "결제하기">
+			<input type="button" class="btn btn-primary btn-sm" onclick="pay()" value = "결제하기">
 			<input type="button" class="btn btn-secondary btn-sm"data-bs-dismiss="modal"  value = "취소하기">
 			
 			</div>

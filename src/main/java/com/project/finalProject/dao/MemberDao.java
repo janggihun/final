@@ -2,6 +2,7 @@ package com.project.finalProject.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.project.finalProject.dto.DuoSearchDto;
 import com.project.finalProject.dto.MemberDto;
 import com.project.finalProject.dto.PaymentDto;
 
@@ -21,6 +22,8 @@ public interface MemberDao {
 	MemberDto main(MemberDto memberDto);
 
 	int updatePoint(PaymentDto paymentDto);
+
+	void saveDb(DuoSearchDto duoSearchDto);
 
 
 }

@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.project.finalProject.controller.DbErrorController;
 import com.project.finalProject.cuntomEx.CunstomException;
 import com.project.finalProject.dao.MemberDao;
+import com.project.finalProject.dto.DuoSearchDto;
 import com.project.finalProject.dto.MemberDto;
 import com.project.finalProject.dto.PaymentDto;
 
@@ -70,6 +71,12 @@ public class MemberService {
 	public MemberDto main(MemberDto memberDto) {
 		
 		return memberDao.main(memberDto);
+		
+	}
+
+	public void saveDb(DuoSearchDto duoSearchDto) {
+		
+		memberDao.saveDb(duoSearchDto);
 		
 	}
 
