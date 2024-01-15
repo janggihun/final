@@ -1,0 +1,14 @@
+@charset "EUC-KR";
+
+
+#myChampion {
+	height : 500px;
+	width : 500px;
+	float: left;
+}
+
+#enemyChampion {
+	height : 500px;
+	width : 500px;
+	float: right;
+}
